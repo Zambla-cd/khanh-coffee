@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Khánh coffee company</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <link rel="stylesheet" href="./css/sylehome.css" />
+  </head>
+
+  <body>
+    <div class="navbar-container">
+      <div class="left-container">
+        <div class="button">
+          <a href="index.html" class="logo">KHÁNH COFFEE</a>
+        </div>
+
+        <div class="button">
+          <a href="index.html">TRANG CHỦ</a>
+        </div>
+
+        <div class="button">
+          <a href="menu.html">THỰC ĐƠN</a>
+        </div>
+
+        <div class="button">
+          <a href="index.html">VỀ CHÚNG TÔI</a>
+        </div>
+
+        <div class="button">
+          <a href="ourspace.html">KHÔNG GIAN</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="coffee-slideshow w3-display-container">
+      <div class="slide-text">
+        <p class="small-title">WELCOME TO KHÁNH COFFEE</p>
+
+        <h1>ĐÁNH THỨC<br />ĐAM MÊ CÀ PHÊ</h1>
+
+        <p class="description">
+          Thưởng thức hương vị cà phê, tận hưởng từng khoảnh khắc.
+        </p>
+
+        <a href="menu.html" class="banner-button"> KHÁM PHÁ THỰC ĐƠN → </a>
+      </div>
+
+      <img class="slides" src="./img/coffee1.jpg" alt="Không gian quán" />
+
+      <img class="slides" src="./img/coffee2.jpg" alt="Những ly cà phê" />
+
+      <img class="slides" src="./img/coffee3.jpg" alt="Cà phê Khánh Coffee" />
+
+      <div class="w3-center w3-display-bottommiddle" style="width: 100%">
+        <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+
+        <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+
+        <span class="w3-badge demo" onclick="currentDiv(1)"></span>
+
+        <span class="w3-badge demo" onclick="currentDiv(2)"></span>
+
+        <span class="w3-badge demo" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
+    <div class="featured-products">
+      <div class="featured-title">
+        <p>SỰ LỰA CHỌN CỦA BẠN</p>
+        <h2>SẢN PHẨM NỔI BẬT</h2>
+        <p>Thưởng thức hương vị cà phê đặc biệt tại Khánh Coffee.</p>
+      </div>
+
+      <div class="product-container">
+        <div class="product-card">
+          <img src="./img/cafe-suada.jpg" alt="Cà phê sữa đá" />
+          <div class="product-info">
+            <h3>Cà phê sữa đá</h3>
+            <p>Hương vị cà phê đậm đà, hòa quyện cùng sữa ngọt dịu.</p>
+            <p class="product-price">29.000đ</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./img/bac-xiu.jpg" alt="Bạc xỉu" />
+          <div class="product-info">
+            <h3>Bạc xỉu</h3>
+            <p>Vị sữa béo nhẹ kết hợp cùng chút cà phê thơm ngon.</p>
+            <p class="product-price">32.000đ</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="./img/cappuccino.jpg" alt="Cappuccino" />
+          <div class="product-info">
+            <h3>Cappuccino</h3>
+            <p>Lớp bọt sữa mềm mịn cùng hương vị cà phê tinh tế.</p>
+            <p class="product-price">45.000đ</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-button">
+        <a href="menu.html">XEM TOÀN BỘ THỰC ĐƠN →</a>
+      </div>
+    </div>
+    <script>
+      let slideIndex = 1;
+
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function currentDiv(n) {
+        showDivs((slideIndex = n));
+      }
+
+      function showDivs(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("demo");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+          dots[i].classList.remove("w3-white");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("w3-white");
+      }
+
+      setInterval(function () {
+        plusDivs(1);
+      }, 3000);
+    </script>
+  </body>
+</html>
